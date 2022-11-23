@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script>
+    function valid(){
+    var idd=document.forms["frm"]["idd"].value;
+    var name=document.forms["frm"]["name"].value;
+    var address=document.forms["frm"]["address"].value;
+    var emarks=document.forms["frm"]["emarks"].value;
+    var smarks=document.forms["frm"]["smarks"].value;
+    var mmarks=document.forms["frm"]["mmarks"].value;
+    var pmarks=document.forms["frm"]["pmarks"].value;
+    var ssmarks=document.forms["frm"]["ssmarks"].value;
+    if(name==""){
+        alert("please enter you first name")
+        return false;
+    }
+    else if(name.length >30 ){
+        alert("First Name should Be less Than 30 characters.");
+        return false;
+    }
+   
+    else if(!((name >='A' && name<='Z') || (name>='a' && name<='z'))){
+        alert("Enter First Name according to the given parameters.");
+        return false;
+    }
+    else if(idd==""){
+        alert("please enter your id")
+        return false;
+    }
+    else if(isNaN(idd) || (idd.length>6)|| (idd<0)){
+        alert("Please Enter Valid ID.");
+        return false;
+    }
+    else if(address==""){
+        alert("please enter your address")
+        return false;
+    }
+    else if(emarks==""){
+        alert("please enter your English Marks")
+        return false;
+    }
+    else if((isNaN(emarks)) || emarks.length > 3 || emarks<0 || emarks>100){
+        alert("Invalid Marks");
+        return false;
+    }
+    else if(smarks==""){
+        alert("please enter your Science Marks")
+        return false;
+    }
+    else if((isNaN(smarks)) || smarks.length > 3 || smarks<0 || emarks>100){
+        alert("Invalid Marks");
+        return false;
+    }
+    else if(mmarks==""){
+        alert("please enter your Maths Marks")
+        return false;
+    }
+    else if((isNaN(mmarks)) || mmarks.length > 3 || mmarks<0 || emarks>100){
+        alert("Invalid Marks");
+        return false;
+    }
+    else if(pmarks==""){
+        alert("please enter your Punjabi Marks")
+        return false;
+    }
+    else if((isNaN(pmarks)) || pmarks.length > 3 || pmarks<0 || emarks>100){
+        alert("Invalid Marks");
+        return false;
+    }
+    else if(ssmarks==""){
+        alert("please enter your English Marks")
+        return false;
+    }
+    else if((isNaN(ssmarks)) || ssmarks.length > 3 || ssmarks<0 || emarks>100){
+        alert("Invalid Marks");
+        return false;
+    }
+    else{
+        alert("Form submitted successfully")
+        return true;
+    }
+}
+    </script>
+</head>
+<body>
+    <div class="container">
+      <h1>Score Card</h1>
+        <form method="post" action="/home" name="frm" onsubmit="return valid()">
+            <div class="form-group">
+                <label for="username" class="form-label">ID</label>
+                <input type="number" class="form-control" name="idd">
+            </div>
+            <div class="form-group">
+                <label for="username" class="form-label">Name</label>
+                <input type="text" class="form-control"  name="name">
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Address</label>
+                <textarea type="text" class="form-control"  name="address"></textarea>
+            </div>
+            <div class="form-group">
+            <label for="password1" class="form-label">Marks</label>
+            <input type="number" name="emarks" placeholder="Enter your English Marks"  class="form-control" ><br>
+            <input type="number" name="smarks"  placeholder="Enter your Science Marks"  class="form-control" ><br>
+            <input type="number" name="mmarks"  placeholder="Enter your Maths Marks"  class="form-control" ><br>
+            <input type="number" name="pmarks"  placeholder="Enter your Punjabi Marks"  class="form-control" ><br>
+            <input type="number" name="ssmarks"  placeholder="Enter your Social Science Marks"  class="form-control"><br>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
